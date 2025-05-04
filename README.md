@@ -1,4 +1,4 @@
-# 🌟 Mi Portafolio Personal - María Isabel Nazar
+# 🌟 Mi Portafolio Personal - María  Nazar
 
 ¡Bienvenid@ a mi portafolio web! Este sitio fue diseñado para mostrar quién soy, mi experiencia profesional, mis proyectos, habilidades, intereses y contacto.
 
