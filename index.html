@@ -1,234 +1,247 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-  <!-- Metaetiquetas obligatorias -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Título de la página -->
-  <title>Mi Portafolio Personal:  Maria Nazar</title>
+    <title>Mi Portafolio Personal:  Maria Nazar</title>
 
-  <!-- Vínculo a la hoja de estilos CSS -->
-  <link rel="stylesheet" href="CSS/STYLE.css">
+    <link rel="stylesheet" href="CSS/STYLE.css">
 
-  <!-- Vínculo a Google Fonts (ejemplo usando Roboto) -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="JS/FORM.js"></script>
+    <script src="JS/MODO_CLARO_OSCURO.js"></script>
+    <script src="JS/CONTENIDO_OCULTO.js"></script>
+    <script src="JS/GALERIA_DINAMICA.js"></script>
+    <script src="JS/RELOJ.js"></script>
+    <script src="JS/VISITAS_CONTADOR.js"></script>
+    <script src="JS/ANIMACION_DINAMICA.js"></script>
+    <script src="JS/FILTROS.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous" />
+
 
 </head>
 <body>
-  <!-- Aquí Menu del portafolio -->
-   <!-- Encabezado principal con el logo y navegación.
-    IDEA FUTURA: Incluir un menú hamburguesa para dispositivos móviles. -->
-  <header>
-    <div class="nav-container">
-      <div class="logo-title">
-        <img src="img/logoMN.png" alt="Logo" class="logo">
-        <h1>Mi Portafolio Personal</h1>
-      </div>
-  
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#peliculas">Películas Favoritas</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  
-  
-  
-  
-  <!-- Aquí Main portafolio -->
-  <main>
+   <div id="mouse-follower">
+    <i class="fas fa-heart"></i>
+  </div>
+    <header>
+        <div class="nav-container">
+            <div class="logo-title">
+                <img src="img/logoMN.png" alt="Logo" class="logo">
+                <h1>Mi Portafolio Personal</h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#peliculas">Películas Favoritas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li class="theme-toggle-li">
+                        <button id="theme-toggle">
+                            <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
- 
-     <aside>
-      <img src="img/avatars.jpg" />
-      <h3>María Isabel  Nazar</h3>
-      <p><strong>Carrera:</strong> Desarrollo de Software</p>
-      <p><strong>Antigüedad:</strong> 10 años</p>
-      <p><strong>Edad:</strong> 35 años</p>
-      <p><strong>Inglés:</strong> Intermedio</p>
-     </aside>
-     <section id="sobre-mi">
-      <div class="cards-container">
-        <article>
-          <p>
-            Soy María Isabel Nazar, docente y directora en una institución técnica de la provincia de Buenos Aires. Con una trayectoria de más de 10 años en el ámbito educativo, una formación en Ciencias Exactas y Estadísticas, y actualmente cursando el último año de la carrera de Desarrollo de Software, he dedicado mi carrera a potenciar la educación técnica. 
-            <strong>Mi principal interés</strong> es aportar mi experiencia para que las y los futuros egresados encuentren un espacio profesional real en el mundo laboral, donde puedan desarrollar su potencial de manera plena y con herramientas actuales. 
-            <strong>Mi misión</strong> es ser un puente entre la formación técnica y el mercado laboral, promoviendo una educación que no solo sea sólida en conocimientos, sino también rica en oportunidades. Creo firmemente en el poder transformador de la educación técnica para construir un futuro más inclusivo, innovador y profesional.
-          </p>
-        </article>
-      </div>
+    <main>
       
-     </section>
-   
-     <section id="proyectos" >
-      <div class="card">
-        <h3> Proyecto Educativo – TecnoComunidad BA</h3>
-        <img src="img/proyect1.png" alt="Proyecto 1">
-      
-        <p>
-          Este proyecto tiene como objetivo acercar la tecnología a sectores vulnerables de la Provincia de Buenos Aires mediante talleres de alfabetización digital, programación básica y herramientas TIC aplicadas al trabajo. Se articula con instituciones técnicas y estudiantes para crear espacios de formación y colaboración comunitaria.
-        </p>
-      </div>
-      <div class="card">
-        <h3> Proyecto de Software – MNShop E-commerce</h3>
-        <img src="img/proyect1.png" alt="Proyecto 1">
+        <aside>
+            <img src="img/avatars.jpg" />
+            <h3>María Isabel  Nazar</h3>
+            <p><strong>Carrera:</strong> Desarrollo de Software</p>
+            <p><strong>Antigüedad:</strong> 10 años</p>
+            <p><strong>Edad:</strong> 35 años</p>
+            <p><strong>Inglés:</strong> Intermedio</p>
+        </aside>
+        <section id="sobre-mi" >
+            <div class="cards-container" >
+                <article  class="default-visible">
+                    <p>
+                        Soy María Isabel Nazar, docente y directora en una institución técnica de la provincia de Buenos Aires. Con una trayectoria de más de 10 años en el ámbito educativo, una formación en Ciencias Exactas y Estadísticas, y actualmente cursando el último año de la carrera de Desarrollo de Software, he dedicado mi carrera a potenciar la educación técnica.
+                        <strong>Mi principal interés</strong> es aportar mi experiencia para que las y los futuros egresados encuentren un espacio profesional real en el mundo laboral, donde puedan desarrollar su potencial de manera plena y con herramientas actuales.
+                        <strong>Mi misión</strong> es ser un puente entre la formación técnica y el mercado laboral, promoviendo una educación que no solo sea sólida en conocimientos, sino también rica en oportunidades. Creo firmemente en el poder transformador de la educación técnica para construir un futuro más inclusivo, innovador y profesional.
+                    </p>
+                    <div class="hidden-content">
+                        <p>Aquí podría ir información adicional sobre mi experiencia educativa, mis motivaciones para cambiar de carrera, o mis aspiraciones profesionales a largo plazo. Podría detallar proyectos específicos en los que he trabajado o las habilidades blandas que considero importantes.</p>
+                        <p>También podría incluir un breve resumen de mi filosofía de enseñanza o mi enfoque en el desarrollo de software.</p>
+                    </div>
+
+                    <button class="toggle-button" data-target="#sobre-mi .hidden-content">Leer Más</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="proyectos" >
+            <div class="card">
+                <h3> Proyecto Educativo – TecnoComunidad BA</h3>
+                <img src="img/proyect1.png" alt="Proyecto 1">
+
+                <p>
+                    Este proyecto tiene como objetivo acercar la tecnología a sectores vulnerables de la Provincia de Buenos Aires mediante talleres de alfabetización digital, programación básica y herramientas TIC aplicadas al trabajo. Se articula con instituciones técnicas y estudiantes para crear espacios de formación y colaboración comunitaria.
+                </p>
+            </div>
+            <div class="card">
+                <h3> Proyecto de Software – MNShop E-commerce</h3>
+                <img src="img/proyect1.png" alt="Proyecto 1">
+
+                <p>
+                    Desarrollo de una plataforma de ventas online adaptable a distintos rubros comerciales. Incluye funcionalidades como catálogo, carrito, pagos en línea y panel administrativo. Pensado para emprendedores y comercios locales que buscan digitalizar sus negocios con una solución accesible, escalable y fácil de usar.
+                </p>
+            </div>
+        </section>
+
+        <section id="habilidades">
+       
+          <div class="filtros-habilidades">
+            <button data-filter="todos" class="activo">Todos</button>
+            <button data-filter="frontend">Frontend</button>
+            <button data-filter="backend">Backend</button>
+            <button data-filter="avanzado">Avanzado</button>
+          </div>
         
-        <p>
-          Desarrollo de una plataforma de ventas online adaptable a distintos rubros comerciales. Incluye funcionalidades como catálogo, carrito, pagos en línea y panel administrativo. Pensado para emprendedores y comercios locales que buscan digitalizar sus negocios con una solución accesible, escalable y fácil de usar.
+          <div class="habilidades-contenedor-principal">
+            <div class="habilidades-tablas">
+              <table class="tabla-habilidad frontend avanzado">
+                <caption>Tecnologías que domino</caption>
+                <tr><th>Lenguaje</th><th>Nivel</th></tr>
+                <tr><td>HTML</td><td>Avanzado</td></tr>
+                <tr><td>CSS</td><td>Intermedio</td></tr>
+                <tr><td>JavaScript</td><td>Intermedio</td></tr>
+              </table>
+        
+              <table class="tabla-habilidad aprender react">
+                <caption>Tecnologías que deseo aprender</caption>
+                <tr><th>Tecnología</th><th>Interés</th></tr>
+                <tr><td>React</td><td>Muy alto</td></tr>
+                <tr><td>Node.js</td><td>Alto</td></tr>
+                <tr><td>Python</td><td>Medio</td></tr>
+              </table>
+        
+              <table class="tabla-habilidad hobbies lectura">
+                <caption>Hobbies</caption>
+                <tr><th>Actividad</th><th>Frecuencia</th></tr>
+                <tr><td>Lectura</td><td>Diario</td></tr>
+                <tr><td>Senderismo</td><td>Mensual</td></tr>
+                <tr><td>Aprender nuevas tecnologías</td><td>Semanal</td></tr>
+              </table>
+            </div>
+        
+            <div id="contenido-filtrado" style="display: none;">
+           
+              <nav class="filtro-navegacion">
+                <button data-seccion="react-detalles" class="activo-filtro">React Detalles</button>
+                <button data-seccion="avanzado-detalles">Avanzado Detalles</button>
+              </nav>
+              <div id="react-detalles" class="detalle-seccion">
+                <p>Información detallada sobre mi interés en React...</p>
+                <ul>
+                  <li>Proyectos planeados con React: ...</li>
+                  <li>Recursos de aprendizaje de React: ...</li>
+                </ul>
+              </div>
+              <div id="avanzado-detalles" class="detalle-seccion" style="display: none;">
+                <p>Un vistazo más profundo a mis habilidades avanzadas...</p>
+                <ul>
+                  <li>Proyectos complejos en HTML: ...</li>
+                  <li>Técnicas avanzadas de CSS: ...</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-          </p>
-      </div>
-    </section>
 
-    <section id="habilidades">
+        <section id="peliculas">
+          <button class="gallery-arrow left-arrow">&lt;</button>
+          <div class="gallery-container">
+            <div class="pelicula-wrapper active-wrapper">
+              <div class="pelicula-card active" data-index="0">
+                <img src="img/forrestgump.jpg" alt="Forrest Gump">
+                <h3>Forrest Gump</h3>
+                <p>Una historia inspiradora...</p>
+              </div>
+            </div>
+            <div class="pelicula-wrapper">
+              <div class="pelicula-card" data-index="1">
+                <img src="img/interestelar.jpg" alt="Interestelar">
+                <h3>Interestelar</h3>
+                <p>Una obra maestra...</p>
+              </div>
+            </div>
+            <div class="pelicula-wrapper">
+              <div class="pelicula-card" data-index="2">
+                <img src="img/carpeDiem.jpg" alt="La sociedad de los poetas muertos">
+                <h3>La sociedad de los poetas muertos</h3>
+                <p>Un poderoso homenaje...</p>
+              </div>
+            </div>
+          </div>
+          <button class="gallery-arrow right-arrow">&gt;</button>
+        </section>
 
-    
-      <div class="habilidades-tablas">
-        <table class="tabla-habilidad">
-          <caption>Tecnologías que domino</caption>
-          <tr>
-            <th>Lenguaje</th>
-            <th>Nivel</th>
-          </tr>
-          <tr>
-            <td>HTML</td>
-            <td>Avanzado</td>
-          </tr>
-          <tr>
-            <td>CSS</td>
-            <td>Intermedio</td>
-          </tr>
-          <tr>
-            <td>JavaScript</td>
-            <td>Intermedio</td>
-          </tr>
-        </table>
-    
-        <table class="tabla-habilidad">
-          <caption>Tecnologías que deseo aprender</caption>
-          <tr>
-            <th>Tecnología</th>
-            <th>Interés</th>
-          </tr>
-          <tr>
-            <td>React</td>
-            <td>Muy alto</td>
-          </tr>
-          <tr>
-            <td>Node.js</td>
-            <td>Alto</td>
-          </tr>
-          <tr>
-            <td>Python</td>
-            <td>Medio</td>
-          </tr>
-        </table>
-    
-        <table class="tabla-habilidad">
-          <caption>Hobbies</caption>
-          <tr>
-            <th>Actividad</th>
-            <th>Frecuencia</th>
-          </tr>
-          <tr>
-            <td>Lectura</td>
-            <td>Diario</td>
-          </tr>
-          <tr>
-            <td>Senderismo</td>
-            <td>Mensual</td>
-          </tr>
-          <tr>
-            <td>Aprender nuevas tecnologías</td>
-            <td>Semanal</td>
-          </tr>
-        </table>
+
+        <section id="contacto">
+            <form class="formulario-contacto">
+                <div class="campo-form">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                </div>
+                <div class="campo-form">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+                </div>
+                <div class="campo-form">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="campo-form">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" inputmode="numeric" pattern="[0-9]*" placeholder="Ingresa tu número">
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+      <div id="deadline-badge">
+        <span id="visit-counter">Cargando visitas...</span>
       </div>
-    </section>
-    
-    <section id="peliculas">
-      <div class="peliculas-container">
-        <div class="pelicula-card">
-          <img src="img/forrestgump.jpg" alt="Forrest Gump">
-          <h3>Forrest Gump</h3>
-          <p>Una historia inspiradora que mezcla drama y comedia, con un personaje entrañable que demuestra que con perseverancia todo es posible.</p>
-        </div>
-    
-        <div class="pelicula-card">
-          <img src="img/interestelar.jpg" alt="Interestelar">
-          <h3>Interestelar</h3>
-          <p>Una obra maestra de la ciencia ficción que combina emoción, ciencia, y un viaje al espacio inolvidable.</p>
-        </div>
-    
-        <div class="pelicula-card">
-          <img src="img/carpeDiem.jpg" alt="La sociedad de los poetas muertos">
-          <h3>La sociedad de los poetas muertos</h3>
-          <p>Un poderoso homenaje al pensamiento libre y al poder transformador de la educación y la poesía. ¡Carpe Diem!</p>
-        </div>
-      </div>
-    </section>
-    <!-- Formulario de contacto básico.
-    IDEA FUTURA: Validar los campos con JavaScript o HTML5 avanzado. -->
-    <section id="contacto">
       
-      <form class="formulario-contacto">
-        <div class="campo-form">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required>
+      <div class="social-icons">
+        <a href="https://github.com/tu_usuario" target="_blank" title="GitHub">
+          <i class="fab fa-github icono-red"></i>
+        </a>
+        <a href="https://linkedin.com/in/tu_usuario" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin icono-red"></i>
+        </a>
+        <a href="#proyectos" title="Proyectos">
+          <i class="fas fa-laptop-code icono-red"></i>
+        </a>
+        <a href="https://wa.me/549XXXXXXXXXX" target="_blank" title="WhatsApp">
+          <i class="fab fa-whatsapp icono-red"></i>
+        </a>
+      </div>
+      <div class="footer-content">
+        <p>&copy; 2025 Mi Portafolio</p>
+        <div id="deadline-badge">
+          <span id="deadline-timer"></span>
         </div>
-        <div class="campo-form">
-          <label for="apellido">Apellido</label>
-          <input type="text" id="apellido" name="apellido" required>
-        </div>
-        <div class="campo-form">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="campo-form">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono">
-        </div>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-    
-    
-    
-  </main>
-  <!-- Aquí Footer( pie) portafolio -->
-   <!-- Pie de página con enlaces a redes sociales y proyectos.
-    IDEA FUTURA: Agregar acceso a CV en PDF y otros enlaces útiles. -->
-  <footer>
-    <a href="https://github.com/tu_usuario" target="_blank" title="GitHub">
-      <i class="fab fa-github icono-red"></i>
-    </a>
-    <a href="https://linkedin.com/in/tu_usuario" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin icono-red"></i>
-    </a>
-    <a href="#proyectos" title="Proyectos">
-      <i class="fas fa-laptop-code icono-red"></i>
-    </a>
-    <a href="https://wa.me/549XXXXXXXXXX" target="_blank" title="WhatsApp">
-      <i class="fab fa-whatsapp icono-red"></i>
-    </a>
-  </footer>
-  
-  
- 
+      </div>
+    </footer>
+
+    <script>
+        if (!location.hash) {
+            location.hash = '#sobre-mi';
+        }
+    </script>
 </body>
-<script>
-  if (!location.hash) {
-    location.hash = '#sobre-mi';
-  }
-</script>
 </html>

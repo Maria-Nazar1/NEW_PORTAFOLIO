@@ -1,169 +1,115 @@
 /* ==== CONFIGURACIÓN GLOBAL ==== */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff0f5;
-    color:white;
-  }
- 
-  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff0f5; /* Modo día (claro) por defecto */
+  color: #333; /* Texto modo día */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  
-  /* ==== LAYOUT PRINCIPAL ==== */
-  main {
-    display: flex;
-    padding: 20px;
-    gap: 20px;
-  }
-  
-  aside {
-    width: 25%;
-    background-color: #000;
-    border: 1px solid #f362b7;
-    padding: 10px;
-    box-sizing: border-box;
-    color: white;
-  
-    /* Para centrar el contenido horizontalmente */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  /* Imagen del avatar */
-  aside img {
-    width: 100px; /* Tamaño ajustable */
-    height: 100px;
-    border-radius: 50%; /* Hace que se vea redonda */
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  
-  section {
-    display: none;
-  }
-  
-  section:target {
-    display: flex;
-  }
-  
-  section.default-visible {
-    display: flex;
-  }
-  
-  
-  /* ==== NAV Y FOOTER ==== */
-   footer {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    background-color: #ff69b4;
-    padding: 15px 0;
-    border-top: 2px solid #e754a1;
-  }
-  
- 
- 
-  footer span {
-    font-weight: bold;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 14px;
-  }
-  
+body.modo-noche {
+  background-color: #1e1e1e; /* Fondo modo noche (oscuro) */
+  color: #f5f5f5; /* Texto modo noche */
+}
 
-  footer span:hover {
-    color: #ffe0f0;
-  }
-  
-  /* ==== CARDS ==== */
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  article {
-    flex: 1 1 200px;
-    background-color: hotpink;
-    border: 1px solid #999;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: white;
-    text-shadow: 1px 1px 2px #00000055;
-  }
-  
-  /* Estilo al hacer hover */
-  article:hover {
-    transform: translateY(-10px);
-    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Adaptación del párrafo */
-  article p {
-    font-size: 1.3em; /* Aumentado pero proporcional al diseño */
-    line-height: 1.6;
-    margin: 0;
-  }
-  
-  /* Opcional: resaltar el texto clave */
-  article strong {
-    font-weight: bold;
-    color: #fffbe0;
-  }
-  
+/* ==== LAYOUT PRINCIPAL ==== */
+main {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
 
- /* Contenedor general del header */
+aside {
+  width: 25%;
+  background-color: #000; /* Fondo modo día */
+  border: 1px solid #f362b7;
+  padding: 10px;
+  box-sizing: border-box;
+  color: white; /* Texto modo día */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+aside.modo-noche {
+  background-color: #333; /* Fondo modo noche */
+  color: #f5f5f5; /* Texto modo noche */
+  border-color: #f362b7; /* Mantiene el color del borde */
+}
+
+/* Imagen del avatar */
+aside img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+section {
+  display: none;
+}
+
+section:target {
+  display: flex;
+}
+
+section.default-visible {
+  display: flex;
+}
+
+/* ==== NAV Y FOOTER ==== */
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #222;
+  background-color: #222; /* Fondo modo día */
   padding: 10px 30px;
+  transition: background-color 0.3s ease;
 }
 
-/* Grupo logo + título */
+.nav-container.modo-noche {
+  background-color: #000; /* Fondo modo noche */
+}
+
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 15px; /* Espacio entre logo y título */
+  gap: 15px;
 }
 
-/* Logo */
 .logo {
   height: 50px;
   width: auto;
 }
 
-/* Título */
 h1 {
-  color: white;
+  color: white; /* Texto modo día */
   font-size: 24px;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
-/* Estilo general del nav (menú de enlaces) */
+h1.modo-noche {
+  color: #f5f5f5; /* Texto modo noche */
+}
+
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #333;
+  background-color: #333; /* Fondo modo día */
   padding: 10px 20px;
+  transition: background-color 0.3s ease;
 }
 
-/* Menú */
+nav.modo-noche {
+  background-color: #222; /* Fondo modo noche */
+}
+
 .nav-menu {
   display: flex;
   gap: 20px;
@@ -173,42 +119,160 @@ nav {
 }
 
 .nav-menu li a {
-  color: white;
+  color: white; /* Texto modo día */
   font-size: 18px;
   text-decoration: none;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+.nav-menu li a.modo-noche {
+  color: #dcdcdc; /* Texto modo noche */
+}
+
 .nav-menu li a:hover {
   color: #ff92c2;
   background-color: rgba(255, 146, 194, 0.3);
-  padding: 5px;
-  border-radius: 5px;
 }
+
+.nav-menu li a.modo-noche:hover {
+  color: #ff92c2;
+  background-color: rgba(255, 146, 194, 0.4);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: #ff69b4; /* Fondo modo día */
+  padding: 15px 0;
+  border-top: 2px solid #e754a1;
+  transition: background-color 0.3s ease, color 0.3s ease, border-top-color 0.3s ease;
+}
+
+footer.modo-noche {
+  background-color: #f362b7; /* Fondo modo noche */
+  color: #1e1e1e; /* Texto modo noche */
+  border-top-color: #f362b7;
+}
+
+footer span {
+  font-weight: bold;
+  color: white; /* Texto modo día */
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+footer span.modo-noche {
+  color: #1e1e1e; /* Texto modo noche */
+}
+
+footer span:hover {
+  color: #ffe0f0;
+}
+
+footer span.modo-noche:hover {
+  color: #333;
+}
+
+/* ==== CARDS ==== */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+article {
+  flex: 1 1 200px;
+  background-color: hotpink; /* Fondo modo día */
+  border: 1px solid #999;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  color: white; /* Texto modo día */
+  text-shadow: 1px 1px 2px #00000055;
+}
+
+article.modo-noche {
+  background-color: #444; /* Fondo modo noche */
+  color: #f5f5f5; /* Texto modo noche */
+  border-color: #666;
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+article:hover {
+  transform: translateY(-10px);
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+article.modo-noche:hover {
+  box-shadow: 4px 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+article p {
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+article.modo-noche p {
+  color: #f5f5f5; /* Texto modo noche */
+}
+
+article strong {
+  font-weight: bold;
+  color: #fffbe0; /* Color día */
+}
+
+article.modo-noche strong {
+  color: #f06292; /* Un acento para el modo noche */
+}
+
 .card {
   display: flex;
-  flex-direction: column; /* Asegura que h3 esté arriba */
+  flex-direction: column;
   align-items: center;
   gap: 10px;
-  background-color: hotpink;
+  background-color: hotpink; /* Fondo modo día */
   border: 1px solid #999;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   flex: 1 1 100%;
-  color: white;
+  color: white; /* Texto modo día */
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card.modo-noche {
+  background-color: #444; /* Fondo modo noche */
+  color: #f5f5f5; /* Texto modo noche */
+  border-color: #666;
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.1);
 }
 
 .card h3 {
   margin: 0;
   font-size: 1.5em;
   font-weight: bold;
-  color: #fffbe0;
+  color: #fffbe0; /* Color día */
   text-shadow: 1px 1px 2px #00000088;
+  transition: color 0.3s ease;
 }
 
-/* Imagen */
+.card.modo-noche h3 {
+  color: #f06292; /* Un acento para el modo noche */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
 .card img {
   width: 80%;
   height: auto;
@@ -216,29 +280,47 @@ nav {
   object-fit: cover;
 }
 
-/* Texto */
 .card p {
   font-size: 1.1em;
   line-height: 1.6;
-  color: white;
+  color: white; /* Texto modo día */
   margin: 0;
   text-shadow: 1px 1px 2px #00000055;
+  transition: color 0.3s ease;
 }
+
+.card.modo-noche p {
+  color: #f5f5f5; /* Texto modo noche */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
 #habilidades {
   width: 75%;
-  background-color: hotpink;
+  background-color: hotpink; /* Fondo modo día */
   border: 1px solid #f362b7;
   padding: 5px;
   box-sizing: border-box;
-  color: white;
+  color: white; /* Texto modo día */
   text-shadow: 1px 1px 2px #00000055;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#habilidades.modo-noche {
+  background-color: #444; /* Fondo modo noche */
+  color: #f5f5f5; /* Texto modo noche */
+  border-color: #f362b7;
 }
 
 #habilidades h2 {
   text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
-  color: #fffbe0;
+  color: #fffbe0; /* Color día */
+  transition: color 0.3s ease;
+}
+
+#habilidades.modo-noche h2 {
+  color: #f06292; /* Un acento para el modo noche */
 }
 
 .habilidades-tablas {
@@ -251,89 +333,103 @@ nav {
 .tabla-habilidad {
   border-collapse: collapse;
   width: 300px;
-  background-color: #ff85c1;
+  background-color: #ff85c1; /* Fondo modo día */
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.tabla-habilidad.modo-noche {
+  background-color: #555; /* Fondo modo noche */
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.1);
+  border-color: #777;
+  color: #f5f5f5;
 }
 
 .tabla-habilidad caption {
   font-weight: bold;
-  background-color: #e754a1;
-  color: white;
+  background-color: #e754a1; /* Fondo modo día */
+  color: white; /* Texto modo día */
   padding: 10px;
   font-size: 1.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tabla-habilidad.modo-noche caption {
+  background-color: #f362b7; /* Fondo modo noche */
+  color: #1e1e1e; /* Texto modo noche */
 }
 
 .tabla-habilidad th,
 .tabla-habilidad td {
   padding: 12px;
-  border: 1px solid #fff;
+  border: 1px solid #fff; /* Borde modo día */
   text-align: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.tabla-habilidad.modo-noche th,
+.tabla-habilidad.modo-noche td {
+  border-color: #777; /* Borde modo noche */
 }
 
 .tabla-habilidad th {
-  background-color: #ff69b4;
-  color: white;
+  background-color: #ff69b4; /* Fondo modo día */
+  color: white; /* Texto modo día */
+}
+
+.tabla-habilidad.modo-noche th {
+  background-color: #f362b7; /* Fondo modo noche */
+  color: #1e1e1e; /* Texto modo noche */
 }
 
 .tabla-habilidad td {
-  background-color: #ffd1e6;
-  color: #222;
+  background-color: #ffd1e6; /* Fondo modo día */
+  color: #222; /* Texto modo día */
 }
 
-#peliculas {
-  width: 100%;
-  background-color: hotpink;
-  border: 1px solid #f362b7;
-  padding: 5px;
-  box-sizing: border-box;
-  color: white;
-  text-shadow: 1px 1px 2px #00000055;
+.tabla-habilidad.modo-noche td {
+  background-color: #666; /* Fondo modo noche */
+  color: #f5f5f5; /* Texto modo noche */
 }
 
-#peliculas h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2em;
-  color: #fffbe0;
-}
-
-.peliculas-container {
+/* Estilos para el botón de modo oscuro/claro en el nav */
+.theme-toggle-li {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  align-items: center; /* Centra verticalmente el botón */
 }
 
-.pelicula-card {
-  background-color: #ff85c1;
-  border: 1px solid #fff;
-  border-radius: 10px;
-  padding: 15px;
-  width: 280px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
+#theme-toggle {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px; /* Ajusta el tamaño del icono */
+  padding: 5px;
+  outline: none; /* Evita el contorno azul al enfocar */
+  display: flex;
+  gap: 5px; /* Espacio entre los iconos */
+  align-items: center;
 }
 
-.pelicula-card img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  margin-bottom: 10px;
+#theme-toggle:hover {
+  color: #ff92c2; /* Color al pasar el ratón */
 }
 
-.pelicula-card h3 {
-  font-size: 1.3em;
-  margin-bottom: 8px;
-  color: #fffbe0;
+#theme-toggle .fa-moon {
+  display: none; /* Oculta la luna por defecto (modo día) */
 }
 
-.pelicula-card p {
-  font-size: 1em;
-  color: #fff;
-  text-shadow: 1px 1px 2px #00000055;
+body.modo-noche #theme-toggle .fa-sun {
+  display: none; /* Oculta el sol en modo noche */
 }
+
+body.modo-noche #theme-toggle .fa-moon {
+  display: inline-block; /* Muestra la luna en modo noche */
+}
+
+/*    CONFIGURADO PARA MODO OSCURO Y CLARO*/
 #contacto {
   width: 75%;
   background-color: hotpink;
@@ -412,5 +508,315 @@ footer {
   transform: scale(1.2);
 }
 
+.input-error {
+  border: 2px solid #ff4d4d;
+  background-color: #fffaf0; /* fondo claro para no chocar con el rosa */
+  color: #000; /* texto legible */
+  transition: all 0.3s ease-in-out;
+}
 
 
+/* Mensaje de error estilo pegatina elegante */
+.error-mensaje {
+  background: rgba(0, 0, 0, 0.65); /* negro más translúcido */
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 12px 16px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border-left: 4px solid #ff4d4d;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  max-width: 100%;
+  position: relative;
+  animation: aparecerSticker 0.3s ease-in-out;
+}
+
+/* Esquinita doblada con sutil transparencia */
+.error-mensaje::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 14px solid rgba(255, 255, 255, 0.05);
+  border-left: 14px solid transparent;
+}
+
+
+.hidden-content {
+  display: none; /* Initially hide the content */
+  margin-top: 10px; /* Add some space above the hidden content */
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.05); /* Optional background for visual distinction */
+  border-radius: 5px;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.toggle-button {
+  background-color: #f362b7; /* Example button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #e754a1;
+}
+
+/* Style for the button when content is shown (optional) */
+.toggle-button.expanded::after {
+  content: "Leer Menos";
+}
+
+#peliculas {
+  position: relative;
+  padding: 20px;
+  overflow: hidden; /* Importante para que las películas fuera del contenedor se oculten */
+}
+
+.gallery-container {
+  display: flex;
+  width: auto; /* Ancho fijo deseado */
+  height:auto; /* Alto fijo deseado */
+  transition: transform 0.5s ease-in-out;
+}
+
+.pelicula-wrapper {
+  flex: 0 0 100%;
+  min-width: 100%;
+  padding: 0; /* Removemos el padding del wrapper para que la card llegue a los bordes */
+  box-sizing: border-box;
+  display: flex; /* Usamos flex para que la card ocupe todo el espacio */
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente la card */
+  align-items: stretch; /* Estira la card horizontalmente */
+}
+
+.pelicula-card {
+  background-color: #e7249c;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex; /* Permite que los elementos internos se distribuyan */
+  flex-direction: column;
+  height: 100%; /* Ocupa todo el alto del wrapper */
+  width: 100%; /* Ocupa todo el ancho del wrapper */
+  justify-content: center; /* Centra verticalmente el contenido de la card */
+  align-items: center; /* Centra horizontalmente el contenido de la card */
+  padding: 20px; /* Añadimos padding dentro de la card para separar del borde */
+  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+}
+
+.pelicula-card img {
+  max-width: 80%;
+  max-height: 70%; /* Ajusta según necesites dentro del alto fijo */
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.pelicula-card h3,
+.pelicula-card p {
+  text-align: center; /* Centramos el texto dentro de la card */
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+/* Animación elegante */
+@keyframes aparecerSticker {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  display: flex; /* Activa Flexbox para la disposición */
+  justify-content: space-between; /* Espacio entre el inicio y el final */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Contenedor para los iconos de redes sociales (centrados) */
+.social-icons {
+  display: flex;
+  justify-content: center; /* Centra los iconos horizontalmente */
+  align-items: center;
+  flex-grow: 1; /* Permite que ocupe el espacio central disponible */
+}
+
+.icono-red {
+  color: white;
+  font-size: 1.5em;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.icono-red:hover {
+  opacity: 0.8;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+}
+
+#visit-counter {
+  font-size: 0.9em;
+  color: #eee;
+  margin-right: 20px; /* Espacio entre el contador y los iconos */
+}
+
+#deadline-badge {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#deadline-timer {
+  /* Estilos adicionales para el texto del temporizador */
+}
+ 
+#mouse-follower {
+  position: fixed; /* Se mantiene en la ventana */
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Permite que los clicks pasen a los elementos debajo */
+  z-index: 9999; /* Asegura que esté por encima de todo */
+  font-size: 1.5em; /* Tamaño del icono */
+  color: #007bff; /* Color del icono */
+  opacity: 0; /* Inicialmente oculto */
+  transform: translate(-50%, -50%) scale(0); /* Centrado y escalado inicial */
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.destacado {
+  /* Estilos para tus elementos destacados */
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out; /* Transición para la animación al hover */
+}
+
+.destacado:hover {
+  transform: scale(1.05); /* Ligeramente más grande al pasar el ratón */
+  cursor: pointer; /* Indica interactividad */
+}
+#habilidades {
+  padding: 20px;
+  text-align: center;
+  position: relative; /* Para el posicionamiento absoluto de la capa */
+}
+
+.filtros-habilidades {
+  margin-bottom: 20px;
+}
+
+.filtros-habilidades button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filtros-habilidades button.activo {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.habilidades-contenedor-principal {
+  position: relative; /* Establece el contexto para el posicionamiento absoluto */
+}
+
+.habilidades-tablas {
+  margin-bottom: 20px;
+  /* Otros estilos de tus tablas */
+}
+
+#contenido-filtrado {
+  text-align: left;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f51e8a;
+  /* Posicionamiento absoluto para la capa */
+  position: absolute;
+  top: 0; /* Ajusta según donde quieras que aparezca la capa */
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Asegura que esté por encima de las tablas */
+}
+
+#contenido-filtrado h3 {
+  margin-top: 0;
+}
+
+.filtro-navegacion {
+  margin-bottom: 10px;
+  background-color: rgba(234, 70, 240, 0.8); /* Fondo semitransparente para la capa */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filtro-navegacion button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.filtro-navegacion button.activo-filtro {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.detalle-seccion {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  background-color: rgba(236, 69, 195, 0.8); /* Fondo semitransparente para el contenido */
+}
